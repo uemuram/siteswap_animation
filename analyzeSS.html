@@ -1,0 +1,174 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset="Shift_JIS>
+
+	<script language="JavaScript" src="ssCommon.js"></script>
+	<script language="JavaScript" src="ssTool.js"></script>
+	<script language="JavaScript" src="ssDisplay.js"></script>
+
+	<!-- 基本URL解析、タイトル表示 -->
+	<script language="JavaScript"><!--
+		var SSdata = analyzeURL();
+		document.write("<title>" + SSdata["title"] + "</title>");
+	// --></script>	
+	
+	<link rel="SHORTCUT ICON" href="favicon.ico">
+	<style type="text/css">
+		<!--
+		td.w   { width: 30; font-size: 16pt; text-align:center;
+				font-weight: bold;}
+		table.b {font-size: 10.5pt;}
+		input.x {border: thin #CCCC99 inset;]
+		-->
+	</style>
+
+</head>
+
+<body>
+
+	<!-- URLを解析して表示方針を決定する-->
+	<script language="JavaScript"><!--
+		var inputAreaNum = SSdata["inputAreaNum"];	//入力欄の表示数
+		//入力欄の内容を記憶するための大域変数を宣言しておく
+		presentInputSS1 = presentInputTrans = presentInputSS2 = "";
+	// --></script>	
+
+<!--間隔を狭めるためにtableを利用-->
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td>
+	<font size="2">	
+		<!-- 入力欄切り替え用リンク -->
+		<a id="offlink1" href="javascript:void(0);" onclick="Disp1InputArea(inputAreaNum); inputAreaNum=1;">接続なし</a>	&nbsp;
+		<a id="offlink2" href="javascript:void(0);" onclick="Disp2InputArea(inputAreaNum); inputAreaNum=2;">直接接続</a>	&nbsp;
+		<a id="offlink3" href="javascript:void(0);" onclick="Disp3InputArea(inputAreaNum); inputAreaNum=3;">糊つき接続</a>	&nbsp;&nbsp;&nbsp;&nbsp;
+		<!-- 他機能用リンク -->
+		<a id="swaplink"  href="javascript:void(0);" onclick="SwapInputArea(inputAreaNum);"> <font color="green">交換</font></a>	&nbsp;
+		<a id="clearlink" href="javascript:void(0);" onclick="ClearInputArea(inputAreaNum);"><font color="green">クリア</font></a>	
+	</font>
+</td></tr>
+<tr><td>	
+	<!-- フォーム -->
+	<form name="siteswapForm">
+		<!-- テキスト入力欄+ボタン表示エリア -->
+		<span id="inputTextArea"></span>
+		&nbsp;
+		<!-- ランダムアニメーションへのリンク表示エリア -->
+		<span id="randomAnimationLink"></span>
+		
+		<!-- 入力欄の中身 + ボタンを表示 -->
+		<script language="JavaScript"><!--
+			//入力欄
+			if(inputAreaNum ==1) Disp1InputArea(0);
+			else if(inputAreaNum ==2) Disp2InputArea(0);
+			else if(inputAreaNum ==3) Disp3InputArea(0);
+			//入力欄の中身表示+ジャグリング可能な場合の背景色変更
+			if(inputAreaNum >= 1){
+				document.siteswapForm.siteswap1.value = SSdata["siteswap1"];
+				changeTextAreaColor(document.siteswapForm.siteswap1);
+			}
+			if(inputAreaNum >= 2){
+				document.siteswapForm.siteswap2.value = SSdata["siteswap2"];
+				changeTextAreaColor(document.siteswapForm.siteswap2);
+			}
+			if(inputAreaNum >= 3){
+				document.siteswapForm.trans.value = SSdata["trans"];
+				changeTextAreaColor2(document.siteswapForm.trans);
+			}
+		// --></script>
+
+		<br><br style="line-height:50%">
+
+		<!-- 横幅選択コンボボックス -->
+		<font size="2">表示幅</font>
+		<script language="JavaScript"><!--
+			dispWidthComboBox();
+			var width = eval(widthData[widthIdx]);		//横幅を設定
+		// --></script>
+
+		&nbsp;&nbsp;
+
+		<!-- 高さ範囲指定コンボボックス-->
+		<font size="2">高さ範囲</font>
+		<script language="JavaScript"><!--
+			dispHeightComboBox();
+		// --></script>
+
+		&nbsp;&nbsp;
+		
+		<!-- ボール個数指定コンボボックス-->
+		<font size="2">ボール個数</font>
+		<script language="JavaScript"><!--
+			dispBallNumComboBox()
+		// --></script>	
+
+		&nbsp;&nbsp;
+
+		<!-- 別ウィンドウでアニメーションを表示するかを決めるチェックボックス-->
+		<script language="JavaScript"><!--
+			dispOtherWindowCheckBox();
+		// --></script>	
+		<font size='2'>小窓を使用</font>
+
+		<!-- ランダム可能かを判定、設定(高さ、ボール個数が確定してから設定) -->
+		<script language="JavaScript"><!--
+			setRandomAnimationLink();
+			setRandomSSButtonState();
+		// --></script>
+
+	</form>
+</td></tr>
+</table>
+	<hr>
+
+	<!-- エラーメッセージ表示エリア -->
+	<span id="messageArea"></span>
+
+	<!-- 結果表示部分 -->
+	<script language="JavaScript"><!--
+		switch(SSdata["p"]){
+			case 0:		//何もなかった場合
+				break;
+			case 1:		//通常入力時
+				dispNormalSS(SSdata["siteswap1"]);
+				break;
+			case 2:		//*付
+				var ballNum = eval( document.siteswapForm.ballNum.selectedIndex );
+				dispSSWithBlank(SSdata["siteswap1"],ballNum);
+				break;
+			case 3:
+				dispDualSS(SSdata["siteswap1"],SSdata["siteswap2"]);
+				break;
+			case 4:
+				dispTripleSS(SSdata["siteswap1"],SSdata["trans"],SSdata["siteswap2"]);
+				break;
+			case 5:
+				dispTransWithBlank(SSdata["siteswap1"],SSdata["trans"],SSdata["siteswap2"]);
+				break;
+			case 6:
+				break;
+			case -1:	//入力エラー時
+				dispMessage("入力エラー");
+				break;
+			case -4:	//*が多すぎる場合
+				dispMessage("*が多すぎます");
+				break;
+			default:
+				break;
+		}
+		//別ウィンドウにアニメーションを表示(表示フラグが立っている場合のみ)
+		dispAnimationInOtherWindow();
+
+	// --></script>
+
+	<!-- フッタ情報 -->
+	<br><br>
+	<p><font size="2">
+		<a href="index.html">TOP</a>
+		&nbsp;&nbsp;
+		<a href="help.html">使い方</a>
+	</font></p>
+
+</body>
+
+</html>

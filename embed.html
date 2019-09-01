@@ -1,0 +1,130 @@
+<html>
+<head>
+
+	<script language="JavaScript" src="ssCommon.js"></script>
+	<script language="JavaScript" src="ssAnimation.js"></script>
+	
+	<!-- 基本URL解析、クッキー情報、取得タイトル表示 -->
+	<script language="JavaScript"><!--
+		embedFlag = true;	//表示ページが埋め込み用であることを示すフラグ
+		setPageStatus();	//URL解析、クッキー方法セット等の初期設定
+		document.write("<title>" + SSdata["title"] + "[Animation]" + "</title>");
+	// --></script>
+
+	<style type="text/css">
+		<!--
+		table.a {
+			position:absolute;
+			left:0;
+			top:0;
+		}
+		-->
+	</style>
+
+</head>
+
+<body id="body1" onload="loadPage('body1')">
+
+	<table class="a" id="flame1" border="0" cellspacing="1" cellpadding="0" bgcolor="#DCDCDC">
+	<tr valign="top"><td bgcolor="white">
+
+		<!-- SS表示エリア1段目 -->
+		<span id="ssArea1"></span>
+		<br>
+
+		<!-- SS表示エリア2段目(ランダム時のみ使用) -->	
+		<span id="ssArea2"></span>
+
+		<!-- エラーメッセージ表示エリア -->
+		<span id="messageArea"></span>
+
+		<!-- 再生、一時停止ボタンを表示 -->
+		<form name="animationForm">
+			<table border=1 bgcolor=seashell width="106">	
+				<tr><td>
+					<!-- 最初に戻るボタン -->
+					<button onclick="return rewind()" style="width:28px">
+						<img src="image/btn_rewind.png">
+					</button>
+					<!-- 再生ボタン -->		
+					<button onclick="return pauseOrPlay()" style="width:28px">
+						<script language="JavaScript"><!--
+							//一時停止状態であれば再生ボタン、再生状態であれば一時停止ボタンを表示
+							if(pauseFlag){
+								document.write('<img src="image/btn_play.png" name="playButton">');
+							}else{
+								document.write('<img src="image/btn_pause.png" name="playButton">');
+							}
+						// --></script>
+					</button>
+					<!-- 進むボタン -->
+					<button onclick="return forward()" style="width:28px">
+						<img src="image/btn_forward_invalid.png" name="forwardButton">
+					</button>
+				</td></tr>
+
+				<tr><td>
+					<!-- スピード調節 -->
+					<!-- スピード表示エリア -->
+					<span id="speedArea"></span>
+					&nbsp;
+					<script language="JavaScript"><!--				
+						dispSpeed();		//スピードを表示
+					// --></script>
+
+					<!-- スライドバーの下の線 + スライドバー -->
+					<img src="image/barline.png" id="barline1"  style="position:absolute;" >
+					<img src="image/slidebar.png" id="slidebar1"  style="position:absolute;" >
+				</td></tr>
+
+				<!-- 0を少なくするためのチェックボックス(ランダムアニメーション時のみ表示) -->
+				<script language="JavaScript"><!--
+					if(SSdata["p"]==7){
+						document.write("<tr><td>");
+						dispLessZeroCheckBox();
+						document.write("</td></tr>");
+					}
+				// --></script>
+
+			</table>
+		</form>
+		&nbsp;
+		<script language="JavaScript"><!--
+			a_juggleX();			//アニメーションページへのリンク(別タブ/ウィンドウ)
+			readySlideBar();		//スライドバーを使う準備
+		// --></script>
+
+	</td></tr>
+	</table>
+
+	<!-- 結果表示部分 -->
+	<script language="JavaScript"><!--
+		switch(SSdata["p"]){
+			case 0:		//何もなかった場合
+				dispMessage("入力エラー");
+				break;
+			case 1:		//通常入力時
+				dispAnimation();
+				break;				
+			case 3:		//直接接続時
+				dispAnimation2();
+				break;
+			case 4:		//糊つき接続時
+				dispAnimation3();
+				break;
+			case 7:		//ランダムアニメーション時
+				dispAnimation4();
+				break;
+			case -1:	//入力エラー時
+				dispMessage("入力エラー");
+				break;
+			default:
+				dispMessage("入力エラー");			//ここは後で消す
+				break;
+		}
+		//外枠のサイズを設定
+		setFrameSize();
+	// --></script>
+
+</body>
+</html>

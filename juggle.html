@@ -1,0 +1,174 @@
+<html>
+<head>
+
+	<script language="JavaScript" src="ssCommon.js"></script>
+	<script language="JavaScript" src="ssAnimation.js"></script>
+	
+	<!-- 基本URL解析、クッキー情報、取得タイトル表示 -->
+	<script language="JavaScript"><!--
+		embedFlag = false;	//表示ページが埋め込み用であることを示すフラグ
+		setPageStatus();	//URL解析、クッキー方法セット等の初期設定
+		document.write("<title>" + SSdata["title"] + "[Animation]" + "</title>");
+	// --></script>
+
+</head>
+
+<body id="body1" onload="loadPage('body1')">
+	<!-- 埋め込み用URL生成時に表示サイズを決定するため、見えないテーブルを配置 -->
+	<table id="flame1" border="0" cellspacing="0" cellpadding="0">
+	<tr valign="top"><td>
+
+		<!-- SS表示エリア1段目 -->
+		<span id="ssArea1"></span>
+		&nbsp; &nbsp;
+
+		<!-- 解析ページへのリンク表示エリア -->
+		<span id="analyzeLink"></span>
+		<br>
+
+		<!-- SS表示エリア2段目(ランダム時のみ使用) -->	
+		<span id="ssArea2"></span>
+
+		<!-- エラーメッセージ表示エリア -->
+		<span id="messageArea"></span>
+
+		<!-- 再生、一時停止ボタンを表示 -->
+		<form name="animationForm">
+			<table border=1 bgcolor=seashell width="106">	
+				<tr><td>
+					<!-- 最初に戻るボタン -->
+					<button onclick="return rewind()" style="width:28px">
+						<img src="image/btn_rewind.png">
+					</button>
+					<!-- 再生ボタン -->		
+					<button onclick="return pauseOrPlay()" style="width:28px">
+						<script language="JavaScript"><!--
+							//一時停止状態であれば再生ボタン、再生状態であれば一時停止ボタンを表示
+							if(pauseFlag){
+								document.write('<img src="image/btn_play.png" name="playButton">');
+							}else{
+								document.write('<img src="image/btn_pause.png" name="playButton">');
+							}
+						// --></script>
+					</button>
+					<!-- 進むボタン -->
+					<button onclick="return forward()" style="width:28px">
+						<img src="image/btn_forward_invalid.png" name="forwardButton">
+					</button>
+				</td></tr>
+
+				<tr><td>
+					<!-- スピード調節 -->
+					<font size="2">speed</font>
+					<br>
+					<!-- スピード表示エリア -->
+					<span id="speedArea"></span>
+					&nbsp;
+					<script language="JavaScript"><!--				
+						dispSpeed();		//スピードを表示
+					// --></script>
+
+					<!-- スライドバーの下の線 + スライドバー -->
+					<img src="image/barline.png" id="barline1"  style="position:absolute;" >
+					<img src="image/slidebar.png" id="slidebar1"  style="position:absolute;" >
+				</td></tr>
+
+				<tr><td>
+					<!-- 拡大率調節 -->
+					<font size="2">zoom</font>
+					&nbsp; &nbsp;
+					<!-- 拡大率リセットリンク -->
+					<a href="javascript:void(0);" onclick="resetZoom();"> <font color="green" size="2">reset</font></a>
+					<br>
+					<!-- 拡大率表示エリア -->
+					<span id="zoomArea"></span>
+					&nbsp
+					<script language="JavaScript"><!--		
+						dispZoom();			//拡大率を表示
+					// --></script>
+
+					<!-- スライドバーの下の線 + スライドバー -->
+					<img src="image/barline.png" id="barline2"  style="position:absolute;" >
+					<img src="image/slidebar.png" id="slidebar2"  style="position:absolute;" >
+				</td></tr>
+
+				<tr><td>
+					<!-- ボール色を変えるコンボボックス -->
+					<font size="2">ball&nbsp;&nbsp;</font>
+					<script language="JavaScript"><!--
+						dispBallColorComboBox();
+					// --></script>	
+				</td></tr>
+				
+				<tr><td>
+					<!-- 頭の種類を変えるコンボボックス -->
+					<font size="2">head</font>
+					<script language="JavaScript"><!--
+						dispHeadComboBox();
+					// --></script>
+				</td></tr>
+				
+				<!-- 0を少なくするためのチェックボックス(ランダムアニメーション時のみ表示) -->
+				<script language="JavaScript"><!--
+					if(SSdata["p"]==7){
+						document.write("<tr><td>");
+						dispLessZeroCheckBox();
+						document.write("</td></tr>");
+					}
+				// --></script>
+			</table>
+			<!-- 埋め込み用URL表示エリア -->
+			<font size="2">Embed:</font>
+			<br>
+			<input type="text" name="embedUrlArea" style="width:106px;font-size:9pt" onclick="embedSelect()">
+		</form>
+
+		<script language="JavaScript"><!--		
+			readySlideBar();		//スライドバーを使う準備
+		// --></script>
+
+	</td></tr>
+	</table>
+
+	<!-- 結果表示部分 -->
+	<script language="JavaScript"><!--
+		switch(SSdata["p"]){
+			case 0:		//何もなかった場合
+				//解析ページへの空リンクを表示
+				if(!SSdata["analyzeOff"]){
+					document.getElementById("analyzeLink").innerHTML = a_analyze1("");
+				}
+				break;
+			case 1:		//通常入力時
+				dispAnimation();
+				break;				
+			case 3:		//直接接続時
+				dispAnimation2();
+				break;
+			case 4:		//糊つき接続時
+				dispAnimation3();
+				break;
+			case 7:		//ランダムアニメーション時
+				dispAnimation4();
+				break;
+			case -1:	//入力エラー時
+				dispMessage("入力エラー");
+				//解析ページへの空リンクを表示
+				if(!SSdata["analyzeOff"]){
+					document.getElementById("analyzeLink").innerHTML = a_analyze1("");
+				}
+				break;
+			default:
+				dispMessage("入力エラー");			//ここは後で消す
+				//解析ページへの空リンクを表示
+				if(!SSdata["analyzeOff"]){
+					document.getElementById("analyzeLink").innerHTML = a_analyze1("");
+				}
+				break;
+		}
+		//埋め込みURLを表示
+		dispEmbedURL();
+	// --></script>
+
+</body>
+</html>
