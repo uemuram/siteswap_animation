@@ -74,14 +74,14 @@ function a_s(nextUrl,str){
 //サイトスワップ(数字)を入力、リンクを生成して表示
 function a_intSS(intSS){
 	var charSS = toChar(intSS);
-	var nextUrl = "analyzeSS.html?siteswap1=" + charSS;
+	var nextUrl = "index.html?siteswap1=" + charSS;
 	a(nextUrl,charSS);
 }
 
 //サイトスワップ(数字)+糊を入力、リンクを生成して表示
 function a_charSS1_intTrans_charSS2(charSS1,intTrans,charSS2){
 	var charTrans = toChar(intTrans);
-	var nextUrl = "analyzeSS.html?siteswap1=" + charSS1
+	var nextUrl = "index.html?siteswap1=" + charSS1
 				+ "&trans=" + charTrans
 				+ "&siteswap2=" + charSS2;
 	var nextString = charSS1 + "-" + charTrans + "-" + charSS2;
@@ -90,21 +90,21 @@ function a_charSS1_intTrans_charSS2(charSS1,intTrans,charSS2){
 
 //解析ページへのリンク("解析")文字列つき(1つ)
 function a_analyze1(charSS1){
-	var nextUrl = "analyzeSS.html?siteswap1=" + charSS1;
+	var nextUrl = "index.html?siteswap1=" + charSS1;
 	var linkString = "<font size=2><a href=" + nextUrl + ">解析</a></font>";
 	return(linkString);
 }
 
 //解析ページへのリンク("解析")文字列つき(直接接続)
 function a_analyze2(charSS1,charSS2){
-	var nextUrl = "analyzeSS.html?siteswap1=" + charSS1 + "&siteswap2=" + charSS2;
+	var nextUrl = "index.html?siteswap1=" + charSS1 + "&siteswap2=" + charSS2;
 	var linkString = "<font size=2><a href=" + nextUrl + ">解析</a></font>";
 	return(linkString);
 }
 
 //解析ページへのリンク("解析")文字列つき(糊つき接続)
 function a_analyze3(charSS1,charTrans,charSS2){
-	var nextUrl = "analyzeSS.html?siteswap1=" + charSS1 + "&trans=" + charTrans + "&siteswap2=" + charSS2;
+	var nextUrl = "index.html?siteswap1=" + charSS1 + "&trans=" + charTrans + "&siteswap2=" + charSS2;
 	var linkString = "<font size=2><a href=" + nextUrl + ">解析</a></font>";
 	return(linkString);
 }

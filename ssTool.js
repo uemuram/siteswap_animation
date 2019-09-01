@@ -138,11 +138,11 @@ function move(inputAreaNum){
 			return;
 		}
 		if(check1 == 2){					//アスタリスク付
-			nextUrl = "analyzeSS.html?siteswap1=" + siteswap1 + "&n=" + document.siteswapForm.ballNum.selectedIndex;
+			nextUrl = "index.html?siteswap1=" + siteswap1 + "&n=" + document.siteswapForm.ballNum.selectedIndex;
 		}else if(check1 == -3){
-			nextUrl = "analyzeSS.html";
+			nextUrl = "index.html";
 		}else{		
-			nextUrl = "analyzeSS.html?siteswap1=" + siteswap1;
+			nextUrl = "index.html?siteswap1=" + siteswap1;
 		}
 	}
 	//直接接続のとき
@@ -152,7 +152,7 @@ function move(inputAreaNum){
 			dispMessage("入力エラー");
 			return;
 		}
-		nextUrl = "analyzeSS.html?siteswap1=" + siteswap1 + "&siteswap2=" + siteswap2;	
+		nextUrl = "index.html?siteswap1=" + siteswap1 + "&siteswap2=" + siteswap2;	
 	}
 	//糊つき接続のとき	
 	else if(inputAreaNum == 3){
@@ -164,7 +164,7 @@ function move(inputAreaNum){
 			dispMessage("*が多すぎます");
 			return;		
 		}
-		nextUrl = "analyzeSS.html?siteswap1=" + siteswap1 + "&trans=" + trans + "&siteswap2=" + siteswap2;
+		nextUrl = "index.html?siteswap1=" + siteswap1 + "&trans=" + trans + "&siteswap2=" + siteswap2;
 	}
 	window.open(nextUrl,'_self');
 }
@@ -790,7 +790,7 @@ function dispRelatedSSInfo(revSS,showerSS,z01SS,resolSS,grandSS,plus1SS,minus1SS
 
 	document.write("<tr>");
 		document.write("<td bgcolor=#d5eaff width=70>リバース</td>");
-		nextUrl = "analyzeSS.html?siteswap1=" + revSS;
+		nextUrl = "index.html?siteswap1=" + revSS;
 		a = a_s(nextUrl,revSS);
 		td_c(a,"#ffffd5");
 	document.write("</tr>");
@@ -798,7 +798,7 @@ function dispRelatedSSInfo(revSS,showerSS,z01SS,resolSS,grandSS,plus1SS,minus1SS
 	document.write("<tr>");
 		document.write("<td bgcolor=#d5eaff width=70>シャワー化</td>");
 		if(showerSS!=""){
-			nextUrl = "analyzeSS.html?siteswap1=" + showerSS;
+			nextUrl = "index.html?siteswap1=" + showerSS;
 			a = a_s(nextUrl,showerSS);
 		}else{
 			a = "不可";
@@ -809,7 +809,7 @@ function dispRelatedSSInfo(revSS,showerSS,z01SS,resolSS,grandSS,plus1SS,minus1SS
 	document.write("<tr>");
 		document.write("<td bgcolor=#d5eaff width=70>Z01変換</td>");
 		if(z01SS!=""){
-			nextUrl = "analyzeSS.html?siteswap1=" + z01SS;
+			nextUrl = "index.html?siteswap1=" + z01SS;
 			a = a_s(nextUrl,z01SS);
 		}else{
 			a = "不可";
@@ -821,7 +821,7 @@ function dispRelatedSSInfo(revSS,showerSS,z01SS,resolSS,grandSS,plus1SS,minus1SS
 		document.write("<td bgcolor=#d5eaff width=70>軌道分解</td>");
 		a="";
 		for(i=0;i<resolSS.length;i++){		//全軌道を表示
-			nextUrl = "analyzeSS.html?siteswap1=" + resolSS[i];
+			nextUrl = "index.html?siteswap1=" + resolSS[i];
 			a += a_s(nextUrl,resolSS[i]);
 			a += " ";
 		}
@@ -833,7 +833,7 @@ function dispRelatedSSInfo(revSS,showerSS,z01SS,resolSS,grandSS,plus1SS,minus1SS
 		a="";
 		if(grandSS.length>0){
 			for(i=0;i<grandSS.length;i++){		//全軌道を表示		
-				nextUrl = "analyzeSS.html?siteswap1=" + grandSS[i];
+				nextUrl = "index.html?siteswap1=" + grandSS[i];
 				a += a_s(nextUrl,grandSS[i]);
 				a += " ";
 			}
@@ -848,7 +848,7 @@ function dispRelatedSSInfo(revSS,showerSS,z01SS,resolSS,grandSS,plus1SS,minus1SS
 		a="";
 		if(plus1SS.length>0){
 			for(i=0;i<plus1SS.length;i++){		//全+1SSを表示		
-				nextUrl = "analyzeSS.html?siteswap1=" + plus1SS[i];
+				nextUrl = "index.html?siteswap1=" + plus1SS[i];
 				a += a_s(nextUrl,plus1SS[i]);
 				a += " ";
 			}
@@ -863,7 +863,7 @@ function dispRelatedSSInfo(revSS,showerSS,z01SS,resolSS,grandSS,plus1SS,minus1SS
 		a="";
 		if(minus1SS.length>0){
 			for(i=0;i<minus1SS.length;i++){		//全-1SSを表示		
-				nextUrl = "analyzeSS.html?siteswap1=" + minus1SS[i];
+				nextUrl = "index.html?siteswap1=" + minus1SS[i];
 				a += a_s(nextUrl,minus1SS[i]);
 				a += " ";
 			}
@@ -1422,7 +1422,7 @@ function dispTransWithBlank(charSS1,charTrans,charSS2){
 			//先頭に戻るリンク
 			var tmpTopSS = Array.apply(null,tmpPrevSS);
 			var tmpTopCharSS = "1" + toChar(moveLeft(tmpTopSS,0));
-			var topLink = 'analyzeSS.html?'
+			var topLink = 'index.html?'
 						 + 'siteswap1=' + charSS1 + '&'
 						 + 'trans=' + charTrans + '&'
 						 + 'siteswap2=' + charSS2;
@@ -1430,7 +1430,7 @@ function dispTransWithBlank(charSS1,charTrans,charSS2){
 			blank(10);
 			//1つ戻るリンク
 			var tmpPrevCharSS = "2" + toChar(tmpPrevSS);
-			var prevLink = 'analyzeSS.html?'
+			var prevLink = 'index.html?'
 						 + 'siteswap1=' + charSS1 + '&'
 						 + 'trans=' + charTrans + '&'
 						 + 'siteswap2=' + charSS2 + '&'
@@ -1443,7 +1443,7 @@ function dispTransWithBlank(charSS1,charTrans,charSS2){
 		if(tmpNextSS!=null){
 			//1つ進むリンク
 			var tmpNextCharSS = "1" + toChar(tmpNextSS);
-			var nextLink = 'analyzeSS.html?'
+			var nextLink = 'index.html?'
 						 + 'siteswap1=' + charSS1 + '&'
 						 + 'trans=' + charTrans + '&'
 						 + 'siteswap2=' + charSS2 + '&'
@@ -1453,7 +1453,7 @@ function dispTransWithBlank(charSS1,charTrans,charSS2){
 			//末尾まで進むリンク
 			var tmpLastSS = Array.apply(null,tmpNextSS);
 			var tmpLastCharSS = "3" + toChar(moveRight(tmpLastSS,0));
-			var topLink = 'analyzeSS.html?'
+			var topLink = 'index.html?'
 						 + 'siteswap1=' + charSS1 + '&'
 						 + 'trans=' + charTrans + '&'
 						 + 'siteswap2=' + charSS2 + '&'
@@ -1480,8 +1480,8 @@ function dispSSWithBlank(charSS,ballNum){
 	document.write("<h3 style='display:inline;'>" + charSS + "&nbsp;&nbsp;&nbsp;&nbsp;" + ballNum + "ボール</h3>");
 	blank(3);
 	//ボール個数+1,-1へのリンク
-	var nextUrlP1 = "analyzeSS.html?siteswap1=" + charSS + "&n=" + (ballNum+1);
-	var nextUrlM1 = "analyzeSS.html?siteswap1=" + charSS + "&n=" + (ballNum-1);
+	var nextUrlP1 = "index.html?siteswap1=" + charSS + "&n=" + (ballNum+1);
+	var nextUrlM1 = "index.html?siteswap1=" + charSS + "&n=" + (ballNum-1);
 	document.write("<font size=2>");
 		if(ballNum<35) a(nextUrlP1,"ボール+1"); else document.write("ボール+1");
 		blank(3);
@@ -1579,14 +1579,14 @@ function dispSSWithBlank(charSS,ballNum){
 			//先頭に戻るリンク
 			var tmpTopSS = Array.apply(null,tmpPrevSS);
 			var tmpTopCharSS = "1" + toChar(moveLeft(tmpTopSS,0));
-			var topLink = 'analyzeSS.html?'
+			var topLink = 'index.html?'
 						 + 'siteswap1=' + charSS + '&'
 						 + 'n=' + ballNum;
 			a(topLink,"＜＜top");			
 			blank(10);
 			//1つ戻るリンク
 			var tmpPrevCharSS = "2" + toChar(tmpPrevSS);
-			var prevLink = 'analyzeSS.html?'
+			var prevLink = 'index.html?'
 						 + 'siteswap1=' + charSS + '&'
 						 + 'n=' + ballNum + '&'
 						 + 't=' + tmpPrevCharSS;			
@@ -1598,7 +1598,7 @@ function dispSSWithBlank(charSS,ballNum){
 		if(tmpNextSS!=null){
 			//1つ進むリンク
 			var tmpNextCharSS = "1" + toChar(tmpNextSS);
-			var nextLink = 'analyzeSS.html?'
+			var nextLink = 'index.html?'
 						 + 'siteswap1=' + charSS + '&'
 						 + 'n=' + ballNum + '&'
 						 + 't=' + tmpNextCharSS;			
@@ -1607,7 +1607,7 @@ function dispSSWithBlank(charSS,ballNum){
 			//末尾まで進むリンク
 			var tmpLastSS = Array.apply(null,tmpNextSS);
 			var tmpLastCharSS = "3" + toChar(moveRight(tmpLastSS,0));
-			var topLink = 'analyzeSS.html?'
+			var topLink = 'index.html?'
 						 + 'siteswap1=' + charSS + '&'
 						 + 'n=' + ballNum + '&'
 						 + 't=' + tmpLastCharSS;			
@@ -1952,7 +1952,7 @@ function moveRandomSS(inputAreaNum){
 		return;
 	}
 	var randomCharSS = toChar(randomIntSS);
-	var nextUrl = "analyzeSS.html?siteswap1=" + randomCharSS;
+	var nextUrl = "index.html?siteswap1=" + randomCharSS;
 
 	//今までと同じ数の入力欄を出すための処理
 	if(inputAreaNum==2) nextUrl += "&siteswap2=";
