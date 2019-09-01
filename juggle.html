@@ -4,46 +4,46 @@
 	<script language="JavaScript" src="ssCommon.js"></script>
 	<script language="JavaScript" src="ssAnimation.js"></script>
 	
-	<!-- Šî–{URL‰ðÍAƒNƒbƒL[î•ñAŽæ“¾ƒ^ƒCƒgƒ‹•\Ž¦ -->
+	<!-- åŸºæœ¬URLè§£æžã€ã‚¯ãƒƒã‚­ãƒ¼æƒ…å ±ã€å–å¾—ã‚¿ã‚¤ãƒˆãƒ«è¡¨ç¤º -->
 	<script language="JavaScript"><!--
-		embedFlag = false;	//•\Ž¦ƒy[ƒW‚ª–„‚ßž‚Ý—p‚Å‚ ‚é‚±‚Æ‚ðŽ¦‚·ƒtƒ‰ƒO
-		setPageStatus();	//URL‰ðÍAƒNƒbƒL[•û–@ƒZƒbƒg“™‚Ì‰ŠúÝ’è
+		embedFlag = false;	//è¡¨ç¤ºãƒšãƒ¼ã‚¸ãŒåŸ‹ã‚è¾¼ã¿ç”¨ã§ã‚ã‚‹ã“ã¨ã‚’ç¤ºã™ãƒ•ãƒ©ã‚°
+		setPageStatus();	//URLè§£æžã€ã‚¯ãƒƒã‚­ãƒ¼æ–¹æ³•ã‚»ãƒƒãƒˆç­‰ã®åˆæœŸè¨­å®š
 		document.write("<title>" + SSdata["title"] + "[Animation]" + "</title>");
 	// --></script>
 
 </head>
 
 <body id="body1" onload="loadPage('body1')">
-	<!-- –„‚ßž‚Ý—pURL¶¬Žž‚É•\Ž¦ƒTƒCƒY‚ðŒˆ’è‚·‚é‚½‚ßAŒ©‚¦‚È‚¢ƒe[ƒuƒ‹‚ð”z’u -->
+	<!-- åŸ‹ã‚è¾¼ã¿ç”¨URLç”Ÿæˆæ™‚ã«è¡¨ç¤ºã‚µã‚¤ã‚ºã‚’æ±ºå®šã™ã‚‹ãŸã‚ã€è¦‹ãˆãªã„ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’é…ç½® -->
 	<table id="flame1" border="0" cellspacing="0" cellpadding="0">
 	<tr valign="top"><td>
 
-		<!-- SS•\Ž¦ƒGƒŠƒA1’i–Ú -->
+		<!-- SSè¡¨ç¤ºã‚¨ãƒªã‚¢1æ®µç›® -->
 		<span id="ssArea1"></span>
 		&nbsp; &nbsp;
 
-		<!-- ‰ðÍƒy[ƒW‚Ö‚ÌƒŠƒ“ƒN•\Ž¦ƒGƒŠƒA -->
+		<!-- è§£æžãƒšãƒ¼ã‚¸ã¸ã®ãƒªãƒ³ã‚¯è¡¨ç¤ºã‚¨ãƒªã‚¢ -->
 		<span id="analyzeLink"></span>
 		<br>
 
-		<!-- SS•\Ž¦ƒGƒŠƒA2’i–Ú(ƒ‰ƒ“ƒ_ƒ€Žž‚Ì‚ÝŽg—p) -->	
+		<!-- SSè¡¨ç¤ºã‚¨ãƒªã‚¢2æ®µç›®(ãƒ©ãƒ³ãƒ€ãƒ æ™‚ã®ã¿ä½¿ç”¨) -->	
 		<span id="ssArea2"></span>
 
-		<!-- ƒGƒ‰[ƒƒbƒZ[ƒW•\Ž¦ƒGƒŠƒA -->
+		<!-- ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸è¡¨ç¤ºã‚¨ãƒªã‚¢ -->
 		<span id="messageArea"></span>
 
-		<!-- Ä¶AˆêŽž’âŽ~ƒ{ƒ^ƒ“‚ð•\Ž¦ -->
+		<!-- å†ç”Ÿã€ä¸€æ™‚åœæ­¢ãƒœã‚¿ãƒ³ã‚’è¡¨ç¤º -->
 		<form name="animationForm">
 			<table border=1 bgcolor=seashell width="106">	
 				<tr><td>
-					<!-- Å‰‚É–ß‚éƒ{ƒ^ƒ“ -->
+					<!-- æœ€åˆã«æˆ»ã‚‹ãƒœã‚¿ãƒ³ -->
 					<button onclick="return rewind()" style="width:28px">
 						<img src="image/btn_rewind.png">
 					</button>
-					<!-- Ä¶ƒ{ƒ^ƒ“ -->		
+					<!-- å†ç”Ÿãƒœã‚¿ãƒ³ -->		
 					<button onclick="return pauseOrPlay()" style="width:28px">
 						<script language="JavaScript"><!--
-							//ˆêŽž’âŽ~ó‘Ô‚Å‚ ‚ê‚ÎÄ¶ƒ{ƒ^ƒ“AÄ¶ó‘Ô‚Å‚ ‚ê‚ÎˆêŽž’âŽ~ƒ{ƒ^ƒ“‚ð•\Ž¦
+							//ä¸€æ™‚åœæ­¢çŠ¶æ…‹ã§ã‚ã‚Œã°å†ç”Ÿãƒœã‚¿ãƒ³ã€å†ç”ŸçŠ¶æ…‹ã§ã‚ã‚Œã°ä¸€æ™‚åœæ­¢ãƒœã‚¿ãƒ³ã‚’è¡¨ç¤º
 							if(pauseFlag){
 								document.write('<img src="image/btn_play.png" name="playButton">');
 							}else{
@@ -51,49 +51,49 @@
 							}
 						// --></script>
 					</button>
-					<!-- i‚Þƒ{ƒ^ƒ“ -->
+					<!-- é€²ã‚€ãƒœã‚¿ãƒ³ -->
 					<button onclick="return forward()" style="width:28px">
 						<img src="image/btn_forward_invalid.png" name="forwardButton">
 					</button>
 				</td></tr>
 
 				<tr><td>
-					<!-- ƒXƒs[ƒh’²ß -->
+					<!-- ã‚¹ãƒ”ãƒ¼ãƒ‰èª¿ç¯€ -->
 					<font size="2">speed</font>
 					<br>
-					<!-- ƒXƒs[ƒh•\Ž¦ƒGƒŠƒA -->
+					<!-- ã‚¹ãƒ”ãƒ¼ãƒ‰è¡¨ç¤ºã‚¨ãƒªã‚¢ -->
 					<span id="speedArea"></span>
 					&nbsp;
 					<script language="JavaScript"><!--				
-						dispSpeed();		//ƒXƒs[ƒh‚ð•\Ž¦
+						dispSpeed();		//ã‚¹ãƒ”ãƒ¼ãƒ‰ã‚’è¡¨ç¤º
 					// --></script>
 
-					<!-- ƒXƒ‰ƒCƒhƒo[‚Ì‰º‚Ìü + ƒXƒ‰ƒCƒhƒo[ -->
+					<!-- ã‚¹ãƒ©ã‚¤ãƒ‰ãƒãƒ¼ã®ä¸‹ã®ç·š + ã‚¹ãƒ©ã‚¤ãƒ‰ãƒãƒ¼ -->
 					<img src="image/barline.png" id="barline1"  style="position:absolute;" >
 					<img src="image/slidebar.png" id="slidebar1"  style="position:absolute;" >
 				</td></tr>
 
 				<tr><td>
-					<!-- Šg‘å—¦’²ß -->
+					<!-- æ‹¡å¤§çŽ‡èª¿ç¯€ -->
 					<font size="2">zoom</font>
 					&nbsp; &nbsp;
-					<!-- Šg‘å—¦ƒŠƒZƒbƒgƒŠƒ“ƒN -->
+					<!-- æ‹¡å¤§çŽ‡ãƒªã‚»ãƒƒãƒˆãƒªãƒ³ã‚¯ -->
 					<a href="javascript:void(0);" onclick="resetZoom();"> <font color="green" size="2">reset</font></a>
 					<br>
-					<!-- Šg‘å—¦•\Ž¦ƒGƒŠƒA -->
+					<!-- æ‹¡å¤§çŽ‡è¡¨ç¤ºã‚¨ãƒªã‚¢ -->
 					<span id="zoomArea"></span>
 					&nbsp
 					<script language="JavaScript"><!--		
-						dispZoom();			//Šg‘å—¦‚ð•\Ž¦
+						dispZoom();			//æ‹¡å¤§çŽ‡ã‚’è¡¨ç¤º
 					// --></script>
 
-					<!-- ƒXƒ‰ƒCƒhƒo[‚Ì‰º‚Ìü + ƒXƒ‰ƒCƒhƒo[ -->
+					<!-- ã‚¹ãƒ©ã‚¤ãƒ‰ãƒãƒ¼ã®ä¸‹ã®ç·š + ã‚¹ãƒ©ã‚¤ãƒ‰ãƒãƒ¼ -->
 					<img src="image/barline.png" id="barline2"  style="position:absolute;" >
 					<img src="image/slidebar.png" id="slidebar2"  style="position:absolute;" >
 				</td></tr>
 
 				<tr><td>
-					<!-- ƒ{[ƒ‹F‚ð•Ï‚¦‚éƒRƒ“ƒ{ƒ{ƒbƒNƒX -->
+					<!-- ãƒœãƒ¼ãƒ«è‰²ã‚’å¤‰ãˆã‚‹ã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹ -->
 					<font size="2">ball&nbsp;&nbsp;</font>
 					<script language="JavaScript"><!--
 						dispBallColorComboBox();
@@ -101,14 +101,14 @@
 				</td></tr>
 				
 				<tr><td>
-					<!-- “ª‚ÌŽí—Þ‚ð•Ï‚¦‚éƒRƒ“ƒ{ƒ{ƒbƒNƒX -->
+					<!-- é ­ã®ç¨®é¡žã‚’å¤‰ãˆã‚‹ã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹ -->
 					<font size="2">head</font>
 					<script language="JavaScript"><!--
 						dispHeadComboBox();
 					// --></script>
 				</td></tr>
 				
-				<!-- 0‚ð­‚È‚­‚·‚é‚½‚ß‚Ìƒ`ƒFƒbƒNƒ{ƒbƒNƒX(ƒ‰ƒ“ƒ_ƒ€ƒAƒjƒ[ƒVƒ‡ƒ“Žž‚Ì‚Ý•\Ž¦) -->
+				<!-- 0ã‚’å°‘ãªãã™ã‚‹ãŸã‚ã®ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹(ãƒ©ãƒ³ãƒ€ãƒ ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æ™‚ã®ã¿è¡¨ç¤º) -->
 				<script language="JavaScript"><!--
 					if(SSdata["p"]==7){
 						document.write("<tr><td>");
@@ -117,56 +117,56 @@
 					}
 				// --></script>
 			</table>
-			<!-- –„‚ßž‚Ý—pURL•\Ž¦ƒGƒŠƒA -->
+			<!-- åŸ‹ã‚è¾¼ã¿ç”¨URLè¡¨ç¤ºã‚¨ãƒªã‚¢ -->
 			<font size="2">Embed:</font>
 			<br>
 			<input type="text" name="embedUrlArea" style="width:106px;font-size:9pt" onclick="embedSelect()">
 		</form>
 
 		<script language="JavaScript"><!--		
-			readySlideBar();		//ƒXƒ‰ƒCƒhƒo[‚ðŽg‚¤€”õ
+			readySlideBar();		//ã‚¹ãƒ©ã‚¤ãƒ‰ãƒãƒ¼ã‚’ä½¿ã†æº–å‚™
 		// --></script>
 
 	</td></tr>
 	</table>
 
-	<!-- Œ‹‰Ê•\Ž¦•”•ª -->
+	<!-- çµæžœè¡¨ç¤ºéƒ¨åˆ† -->
 	<script language="JavaScript"><!--
 		switch(SSdata["p"]){
-			case 0:		//‰½‚à‚È‚©‚Á‚½ê‡
-				//‰ðÍƒy[ƒW‚Ö‚Ì‹óƒŠƒ“ƒN‚ð•\Ž¦
+			case 0:		//ä½•ã‚‚ãªã‹ã£ãŸå ´åˆ
+				//è§£æžãƒšãƒ¼ã‚¸ã¸ã®ç©ºãƒªãƒ³ã‚¯ã‚’è¡¨ç¤º
 				if(!SSdata["analyzeOff"]){
 					document.getElementById("analyzeLink").innerHTML = a_analyze1("");
 				}
 				break;
-			case 1:		//’Êí“ü—ÍŽž
+			case 1:		//é€šå¸¸å…¥åŠ›æ™‚
 				dispAnimation();
 				break;				
-			case 3:		//’¼ÚÚ‘±Žž
+			case 3:		//ç›´æŽ¥æŽ¥ç¶šæ™‚
 				dispAnimation2();
 				break;
-			case 4:		//ŒÐ‚Â‚«Ú‘±Žž
+			case 4:		//ç³Šã¤ãæŽ¥ç¶šæ™‚
 				dispAnimation3();
 				break;
-			case 7:		//ƒ‰ƒ“ƒ_ƒ€ƒAƒjƒ[ƒVƒ‡ƒ“Žž
+			case 7:		//ãƒ©ãƒ³ãƒ€ãƒ ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æ™‚
 				dispAnimation4();
 				break;
-			case -1:	//“ü—ÍƒGƒ‰[Žž
-				dispMessage("“ü—ÍƒGƒ‰[");
-				//‰ðÍƒy[ƒW‚Ö‚Ì‹óƒŠƒ“ƒN‚ð•\Ž¦
+			case -1:	//å…¥åŠ›ã‚¨ãƒ©ãƒ¼æ™‚
+				dispMessage("å…¥åŠ›ã‚¨ãƒ©ãƒ¼");
+				//è§£æžãƒšãƒ¼ã‚¸ã¸ã®ç©ºãƒªãƒ³ã‚¯ã‚’è¡¨ç¤º
 				if(!SSdata["analyzeOff"]){
 					document.getElementById("analyzeLink").innerHTML = a_analyze1("");
 				}
 				break;
 			default:
-				dispMessage("“ü—ÍƒGƒ‰[");			//‚±‚±‚ÍŒã‚ÅÁ‚·
-				//‰ðÍƒy[ƒW‚Ö‚Ì‹óƒŠƒ“ƒN‚ð•\Ž¦
+				dispMessage("å…¥åŠ›ã‚¨ãƒ©ãƒ¼");			//ã“ã“ã¯å¾Œã§æ¶ˆã™
+				//è§£æžãƒšãƒ¼ã‚¸ã¸ã®ç©ºãƒªãƒ³ã‚¯ã‚’è¡¨ç¤º
 				if(!SSdata["analyzeOff"]){
 					document.getElementById("analyzeLink").innerHTML = a_analyze1("");
 				}
 				break;
 		}
-		//–„‚ßž‚ÝURL‚ð•\Ž¦
+		//åŸ‹ã‚è¾¼ã¿URLã‚’è¡¨ç¤º
 		dispEmbedURL();
 	// --></script>
 

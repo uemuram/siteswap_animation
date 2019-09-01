@@ -7,7 +7,7 @@
 	<script language="JavaScript" src="ssTool.js"></script>
 	<script language="JavaScript" src="ssDisplay.js"></script>
 
-	<!-- Šî–{URL‰ğÍAƒ^ƒCƒgƒ‹•\¦ -->
+	<!-- åŸºæœ¬URLè§£æã€ã‚¿ã‚¤ãƒˆãƒ«è¡¨ç¤º -->
 	<script language="JavaScript"><!--
 		var SSdata = analyzeURL();
 		document.write("<title>" + SSdata["title"] + "</title>");
@@ -27,42 +27,42 @@
 
 <body>
 
-	<!-- URL‚ğ‰ğÍ‚µ‚Ä•\¦•ûj‚ğŒˆ’è‚·‚é-->
+	<!-- URLã‚’è§£æã—ã¦è¡¨ç¤ºæ–¹é‡ã‚’æ±ºå®šã™ã‚‹-->
 	<script language="JavaScript"><!--
-		var inputAreaNum = SSdata["inputAreaNum"];	//“ü—Í—“‚Ì•\¦”
-		//“ü—Í—“‚Ì“à—e‚ğ‹L‰¯‚·‚é‚½‚ß‚Ì‘åˆæ•Ï”‚ğéŒ¾‚µ‚Ä‚¨‚­
+		var inputAreaNum = SSdata["inputAreaNum"];	//å…¥åŠ›æ¬„ã®è¡¨ç¤ºæ•°
+		//å…¥åŠ›æ¬„ã®å†…å®¹ã‚’è¨˜æ†¶ã™ã‚‹ãŸã‚ã®å¤§åŸŸå¤‰æ•°ã‚’å®£è¨€ã—ã¦ãŠã
 		presentInputSS1 = presentInputTrans = presentInputSS2 = "";
 	// --></script>	
 
-<!--ŠÔŠu‚ğ‹·‚ß‚é‚½‚ß‚Étable‚ğ—˜—p-->
+<!--é–“éš”ã‚’ç‹­ã‚ã‚‹ãŸã‚ã«tableã‚’åˆ©ç”¨-->
 <table border="0" cellspacing="0" cellpadding="0">
 <tr><td>
 	<font size="2">	
-		<!-- “ü—Í—“Ø‚è‘Ö‚¦—pƒŠƒ“ƒN -->
-		<a id="offlink1" href="javascript:void(0);" onclick="Disp1InputArea(inputAreaNum); inputAreaNum=1;">Ú‘±‚È‚µ</a>	&nbsp;
-		<a id="offlink2" href="javascript:void(0);" onclick="Disp2InputArea(inputAreaNum); inputAreaNum=2;">’¼ÚÚ‘±</a>	&nbsp;
-		<a id="offlink3" href="javascript:void(0);" onclick="Disp3InputArea(inputAreaNum); inputAreaNum=3;">ŒĞ‚Â‚«Ú‘±</a>	&nbsp;&nbsp;&nbsp;&nbsp;
-		<!-- ‘¼‹@”\—pƒŠƒ“ƒN -->
-		<a id="swaplink"  href="javascript:void(0);" onclick="SwapInputArea(inputAreaNum);"> <font color="green">ŒğŠ·</font></a>	&nbsp;
-		<a id="clearlink" href="javascript:void(0);" onclick="ClearInputArea(inputAreaNum);"><font color="green">ƒNƒŠƒA</font></a>	
+		<!-- å…¥åŠ›æ¬„åˆ‡ã‚Šæ›¿ãˆç”¨ãƒªãƒ³ã‚¯ -->
+		<a id="offlink1" href="javascript:void(0);" onclick="Disp1InputArea(inputAreaNum); inputAreaNum=1;">æ¥ç¶šãªã—</a>	&nbsp;
+		<a id="offlink2" href="javascript:void(0);" onclick="Disp2InputArea(inputAreaNum); inputAreaNum=2;">ç›´æ¥æ¥ç¶š</a>	&nbsp;
+		<a id="offlink3" href="javascript:void(0);" onclick="Disp3InputArea(inputAreaNum); inputAreaNum=3;">ç³Šã¤ãæ¥ç¶š</a>	&nbsp;&nbsp;&nbsp;&nbsp;
+		<!-- ä»–æ©Ÿèƒ½ç”¨ãƒªãƒ³ã‚¯ -->
+		<a id="swaplink"  href="javascript:void(0);" onclick="SwapInputArea(inputAreaNum);"> <font color="green">äº¤æ›</font></a>	&nbsp;
+		<a id="clearlink" href="javascript:void(0);" onclick="ClearInputArea(inputAreaNum);"><font color="green">ã‚¯ãƒªã‚¢</font></a>	
 	</font>
 </td></tr>
 <tr><td>	
-	<!-- ƒtƒH[ƒ€ -->
+	<!-- ãƒ•ã‚©ãƒ¼ãƒ  -->
 	<form name="siteswapForm">
-		<!-- ƒeƒLƒXƒg“ü—Í—“+ƒ{ƒ^ƒ“•\¦ƒGƒŠƒA -->
+		<!-- ãƒ†ã‚­ã‚¹ãƒˆå…¥åŠ›æ¬„+ãƒœã‚¿ãƒ³è¡¨ç¤ºã‚¨ãƒªã‚¢ -->
 		<span id="inputTextArea"></span>
 		&nbsp;
-		<!-- ƒ‰ƒ“ƒ_ƒ€ƒAƒjƒ[ƒVƒ‡ƒ“‚Ö‚ÌƒŠƒ“ƒN•\¦ƒGƒŠƒA -->
+		<!-- ãƒ©ãƒ³ãƒ€ãƒ ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã¸ã®ãƒªãƒ³ã‚¯è¡¨ç¤ºã‚¨ãƒªã‚¢ -->
 		<span id="randomAnimationLink"></span>
 		
-		<!-- “ü—Í—“‚Ì’†g + ƒ{ƒ^ƒ“‚ğ•\¦ -->
+		<!-- å…¥åŠ›æ¬„ã®ä¸­èº« + ãƒœã‚¿ãƒ³ã‚’è¡¨ç¤º -->
 		<script language="JavaScript"><!--
-			//“ü—Í—“
+			//å…¥åŠ›æ¬„
 			if(inputAreaNum ==1) Disp1InputArea(0);
 			else if(inputAreaNum ==2) Disp2InputArea(0);
 			else if(inputAreaNum ==3) Disp3InputArea(0);
-			//“ü—Í—“‚Ì’†g•\¦+ƒWƒƒƒOƒŠƒ“ƒO‰Â”\‚Èê‡‚Ì”wŒiF•ÏX
+			//å…¥åŠ›æ¬„ã®ä¸­èº«è¡¨ç¤º+ã‚¸ãƒ£ã‚°ãƒªãƒ³ã‚°å¯èƒ½ãªå ´åˆã®èƒŒæ™¯è‰²å¤‰æ›´
 			if(inputAreaNum >= 1){
 				document.siteswapForm.siteswap1.value = SSdata["siteswap1"];
 				changeTextAreaColor(document.siteswapForm.siteswap1);
@@ -79,38 +79,38 @@
 
 		<br><br style="line-height:50%">
 
-		<!-- ‰¡•‘I‘ğƒRƒ“ƒ{ƒ{ƒbƒNƒX -->
-		<font size="2">•\¦•</font>
+		<!-- æ¨ªå¹…é¸æŠã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹ -->
+		<font size="2">è¡¨ç¤ºå¹…</font>
 		<script language="JavaScript"><!--
 			dispWidthComboBox();
-			var width = eval(widthData[widthIdx]);		//‰¡•‚ğİ’è
+			var width = eval(widthData[widthIdx]);		//æ¨ªå¹…ã‚’è¨­å®š
 		// --></script>
 
 		&nbsp;&nbsp;
 
-		<!-- ‚‚³”ÍˆÍw’èƒRƒ“ƒ{ƒ{ƒbƒNƒX-->
-		<font size="2">‚‚³”ÍˆÍ</font>
+		<!-- é«˜ã•ç¯„å›²æŒ‡å®šã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹-->
+		<font size="2">é«˜ã•ç¯„å›²</font>
 		<script language="JavaScript"><!--
 			dispHeightComboBox();
 		// --></script>
 
 		&nbsp;&nbsp;
 		
-		<!-- ƒ{[ƒ‹ŒÂ”w’èƒRƒ“ƒ{ƒ{ƒbƒNƒX-->
-		<font size="2">ƒ{[ƒ‹ŒÂ”</font>
+		<!-- ãƒœãƒ¼ãƒ«å€‹æ•°æŒ‡å®šã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹-->
+		<font size="2">ãƒœãƒ¼ãƒ«å€‹æ•°</font>
 		<script language="JavaScript"><!--
 			dispBallNumComboBox()
 		// --></script>	
 
 		&nbsp;&nbsp;
 
-		<!-- •ÊƒEƒBƒ“ƒhƒE‚ÅƒAƒjƒ[ƒVƒ‡ƒ“‚ğ•\¦‚·‚é‚©‚ğŒˆ‚ß‚éƒ`ƒFƒbƒNƒ{ƒbƒNƒX-->
+		<!-- åˆ¥ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã§ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’è¡¨ç¤ºã™ã‚‹ã‹ã‚’æ±ºã‚ã‚‹ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹-->
 		<script language="JavaScript"><!--
 			dispOtherWindowCheckBox();
 		// --></script>	
-		<font size='2'>¬‘‹‚ğg—p</font>
+		<font size='2'>å°çª“ã‚’ä½¿ç”¨</font>
 
-		<!-- ƒ‰ƒ“ƒ_ƒ€‰Â”\‚©‚ğ”»’èAİ’è(‚‚³Aƒ{[ƒ‹ŒÂ”‚ªŠm’è‚µ‚Ä‚©‚çİ’è) -->
+		<!-- ãƒ©ãƒ³ãƒ€ãƒ å¯èƒ½ã‹ã‚’åˆ¤å®šã€è¨­å®š(é«˜ã•ã€ãƒœãƒ¼ãƒ«å€‹æ•°ãŒç¢ºå®šã—ã¦ã‹ã‚‰è¨­å®š) -->
 		<script language="JavaScript"><!--
 			setRandomAnimationLink();
 			setRandomSSButtonState();
@@ -121,18 +121,18 @@
 </table>
 	<hr>
 
-	<!-- ƒGƒ‰[ƒƒbƒZ[ƒW•\¦ƒGƒŠƒA -->
+	<!-- ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸è¡¨ç¤ºã‚¨ãƒªã‚¢ -->
 	<span id="messageArea"></span>
 
-	<!-- Œ‹‰Ê•\¦•”•ª -->
+	<!-- çµæœè¡¨ç¤ºéƒ¨åˆ† -->
 	<script language="JavaScript"><!--
 		switch(SSdata["p"]){
-			case 0:		//‰½‚à‚È‚©‚Á‚½ê‡
+			case 0:		//ä½•ã‚‚ãªã‹ã£ãŸå ´åˆ
 				break;
-			case 1:		//’Êí“ü—Í
+			case 1:		//é€šå¸¸å…¥åŠ›æ™‚
 				dispNormalSS(SSdata["siteswap1"]);
 				break;
-			case 2:		//*•t
+			case 2:		//*ä»˜
 				var ballNum = eval( document.siteswapForm.ballNum.selectedIndex );
 				dispSSWithBlank(SSdata["siteswap1"],ballNum);
 				break;
@@ -147,24 +147,24 @@
 				break;
 			case 6:
 				break;
-			case -1:	//“ü—ÍƒGƒ‰[
-				dispMessage("“ü—ÍƒGƒ‰[");
+			case -1:	//å…¥åŠ›ã‚¨ãƒ©ãƒ¼æ™‚
+				dispMessage("å…¥åŠ›ã‚¨ãƒ©ãƒ¼");
 				break;
-			case -4:	//*‚ª‘½‚·‚¬‚éê‡
-				dispMessage("*‚ª‘½‚·‚¬‚Ü‚·");
+			case -4:	//*ãŒå¤šã™ãã‚‹å ´åˆ
+				dispMessage("*ãŒå¤šã™ãã¾ã™");
 				break;
 			default:
 				break;
 		}
-		//•ÊƒEƒBƒ“ƒhƒE‚ÉƒAƒjƒ[ƒVƒ‡ƒ“‚ğ•\¦(•\¦ƒtƒ‰ƒO‚ª—§‚Á‚Ä‚¢‚éê‡‚Ì‚İ)
+		//åˆ¥ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’è¡¨ç¤º(è¡¨ç¤ºãƒ•ãƒ©ã‚°ãŒç«‹ã£ã¦ã„ã‚‹å ´åˆã®ã¿)
 		dispAnimationInOtherWindow();
 
 	// --></script>
 
-	<!-- ƒtƒbƒ^î•ñ -->
+	<!-- ãƒ•ãƒƒã‚¿æƒ…å ± -->
 	<br><br>
 	<p><font size="2">
-		<a href="help.html">g‚¢•û</a>
+		<a href="help.html">ä½¿ã„æ–¹</a>
 	</font></p>
 
 </body>

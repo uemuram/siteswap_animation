@@ -1,53 +1,53 @@
-//“ü—Í—“‚Ì”‚É‰‚¶‚ÄAŒ»İ‚Ì“ü—Í“à—e‚ğ‘åˆæ‚É‹L‰¯‚·‚é
+//å…¥åŠ›æ¬„ã®æ•°ã«å¿œã˜ã¦ã€ç¾åœ¨ã®å…¥åŠ›å†…å®¹ã‚’å¤§åŸŸã«è¨˜æ†¶ã™ã‚‹
 function saveInputArea(inputAreaNum){
 	if(inputAreaNum >= 1) presentInputSS1 = document.siteswapForm.siteswap1.value;
 	if(inputAreaNum >= 2) presentInputSS2 = document.siteswapForm.siteswap2.value;
 	if(inputAreaNum >= 3) presentInputTrans = document.siteswapForm.trans.value;
 }
 
-//“ü—Í—“‚Ì”‚É‰‚¶‚ÄA‹L‰¯‚³‚ê‚Ä‚¢‚é“ü—Í“à—e‚ğ•\¦‚·‚é
+//å…¥åŠ›æ¬„ã®æ•°ã«å¿œã˜ã¦ã€è¨˜æ†¶ã•ã‚Œã¦ã„ã‚‹å…¥åŠ›å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹
 function loadInputArea(inputAreaNum){
 	document.siteswapForm.siteswap1.value = presentInputSS1;
 	if(inputAreaNum >= 2) document.siteswapForm.siteswap2.value = presentInputSS2;
 	if(inputAreaNum >= 3) document.siteswapForm.trans.value = presentInputTrans;	
 }
 
-//ƒ{ƒ^ƒ“•¶š—ñ(juggle)‚ğ•Ô‚·
+//ãƒœã‚¿ãƒ³æ–‡å­—åˆ—(juggle)ã‚’è¿”ã™
 function juggleButton(){
 	return('<input type="button" value="juggle" onclick="move(inputAreaNum)">');
 }
 
-//ƒ{ƒ^ƒ“•¶š—ñ(random)‚ğ•Ô‚·
+//ãƒœã‚¿ãƒ³æ–‡å­—åˆ—(random)ã‚’è¿”ã™
 function randomButton(){
 	return('<input type="button" name="randomButton" value="random" onclick="moveRandomSS(inputAreaNum)" style="width:55px">');
 }
 
-//“ü—ÍƒGƒŠƒA‚ğ1‚Â+ƒ{ƒ^ƒ“‚ğ•\¦
+//å…¥åŠ›ã‚¨ãƒªã‚¢ã‚’1ã¤+ãƒœã‚¿ãƒ³ã‚’è¡¨ç¤º
 function Disp1InputArea(inputAreaNum){
-	//g—p‚µ‚È‚¢ƒŠƒ“ƒN‚ğ–³Œø‰»Ag—p‚·‚éƒŠƒ“ƒN‚ğ—LŒø‰»
+	//ä½¿ç”¨ã—ãªã„ãƒªãƒ³ã‚¯ã‚’ç„¡åŠ¹åŒ–ã€ä½¿ç”¨ã™ã‚‹ãƒªãƒ³ã‚¯ã‚’æœ‰åŠ¹åŒ–
 	document.getElementById("offlink1").removeAttribute("href");
 	document.getElementById("offlink2").setAttribute("href","javascript:void(0);");
 	document.getElementById("offlink3").setAttribute("href","javascript:void(0);");
 	document.getElementById("swaplink").removeAttribute("href");
-	saveInputArea(inputAreaNum);	//Œ»İ‚Ì•\¦ó‘Ô‚ğ•Û‘¶
+	saveInputArea(inputAreaNum);	//ç¾åœ¨ã®è¡¨ç¤ºçŠ¶æ…‹ã‚’ä¿å­˜
 	document.getElementById("inputTextArea").innerHTML = 
 	  '<input class=x type="text" size="28" name="siteswap1" onKeyUp="return keyTouch(event,inputAreaNum,this);">'
 	+ '&nbsp;'
 	+ juggleButton()
 	+ randomButton();
-	loadInputArea(1);				//Ÿ‚Ì•\¦ó‘Ô‚ğİ’è
-	changeTextAreaColor(document.siteswapForm.siteswap1);	//ƒWƒƒƒOƒŠƒ“ƒO‰Â”\‚Èê‡‚Ì”wŒiF•ÏX
+	loadInputArea(1);				//æ¬¡ã®è¡¨ç¤ºçŠ¶æ…‹ã‚’è¨­å®š
+	changeTextAreaColor(document.siteswapForm.siteswap1);	//ã‚¸ãƒ£ã‚°ãƒªãƒ³ã‚°å¯èƒ½ãªå ´åˆã®èƒŒæ™¯è‰²å¤‰æ›´
 	return(1);
 }
 
-//“ü—ÍƒGƒŠƒA‚ğ2‚Â+ƒ{ƒ^ƒ“‚ğ•\¦
+//å…¥åŠ›ã‚¨ãƒªã‚¢ã‚’2ã¤+ãƒœã‚¿ãƒ³ã‚’è¡¨ç¤º
 function Disp2InputArea(inputAreaNum){
-	//g—p‚µ‚È‚¢ƒŠƒ“ƒN‚ğ–³Œø‰»Ag—p‚·‚éƒŠƒ“ƒN‚ğ—LŒø‰»
+	//ä½¿ç”¨ã—ãªã„ãƒªãƒ³ã‚¯ã‚’ç„¡åŠ¹åŒ–ã€ä½¿ç”¨ã™ã‚‹ãƒªãƒ³ã‚¯ã‚’æœ‰åŠ¹åŒ–
 	document.getElementById("offlink1").setAttribute("href","javascript:void(0);");
 	document.getElementById("offlink2").removeAttribute("href");
 	document.getElementById("offlink3").setAttribute("href","javascript:void(0);");	
 	document.getElementById("swaplink").setAttribute("href","javascript:void(0);");
-	saveInputArea(inputAreaNum);	//Œ»İ‚Ì•\¦ó‘Ô‚ğ•Û‘¶
+	saveInputArea(inputAreaNum);	//ç¾åœ¨ã®è¡¨ç¤ºçŠ¶æ…‹ã‚’ä¿å­˜
 	document.getElementById("inputTextArea").innerHTML = 
 	  '<input  class=x type="text" size="16" name="siteswap1" onKeyUp="return keyTouch(event,inputAreaNum,this);">'
 	+ '&nbsp;-&nbsp;'
@@ -55,20 +55,20 @@ function Disp2InputArea(inputAreaNum){
 	+ '&nbsp;'	
 	+ juggleButton()
 	+ randomButton();
-	loadInputArea(2);				//Ÿ‚Ì•\¦ó‘Ô‚ğİ’è
-	changeTextAreaColor(document.siteswapForm.siteswap1);	//ƒWƒƒƒOƒŠƒ“ƒO‰Â”\‚Èê‡‚Ì”wŒiF•ÏX
+	loadInputArea(2);				//æ¬¡ã®è¡¨ç¤ºçŠ¶æ…‹ã‚’è¨­å®š
+	changeTextAreaColor(document.siteswapForm.siteswap1);	//ã‚¸ãƒ£ã‚°ãƒªãƒ³ã‚°å¯èƒ½ãªå ´åˆã®èƒŒæ™¯è‰²å¤‰æ›´
 	changeTextAreaColor(document.siteswapForm.siteswap2);
 	return(2);
 }
 
-//“ü—ÍƒGƒŠƒA‚ğ3‚Â+ƒ{ƒ^ƒ“‚ğ•\¦
+//å…¥åŠ›ã‚¨ãƒªã‚¢ã‚’3ã¤+ãƒœã‚¿ãƒ³ã‚’è¡¨ç¤º
 function Disp3InputArea(inputAreaNum){
-	//g—p‚µ‚È‚¢ƒŠƒ“ƒN‚ğ–³Œø‰»Ag—p‚·‚éƒŠƒ“ƒN‚ğ—LŒø‰»
+	//ä½¿ç”¨ã—ãªã„ãƒªãƒ³ã‚¯ã‚’ç„¡åŠ¹åŒ–ã€ä½¿ç”¨ã™ã‚‹ãƒªãƒ³ã‚¯ã‚’æœ‰åŠ¹åŒ–
 	document.getElementById("offlink1").setAttribute("href","javascript:void(0);");
 	document.getElementById("offlink2").setAttribute("href","javascript:void(0);");	
 	document.getElementById("offlink3").removeAttribute("href");
 	document.getElementById("swaplink").setAttribute("href","javascript:void(0);");
-	saveInputArea(inputAreaNum);	//Œ»İ‚Ì•\¦ó‘Ô‚ğ•Û‘¶
+	saveInputArea(inputAreaNum);	//ç¾åœ¨ã®è¡¨ç¤ºçŠ¶æ…‹ã‚’ä¿å­˜
 	document.getElementById("inputTextArea").innerHTML = 
 	  '<input class=x type="text" size="16" name="siteswap1" onKeyUp="return keyTouch(event,inputAreaNum,this);">'
 	+ '&nbsp;-&nbsp;'
@@ -78,14 +78,14 @@ function Disp3InputArea(inputAreaNum){
 	+ '&nbsp;'	
 	+ juggleButton()
 	+ randomButton();
-	loadInputArea(3);				//Ÿ‚Ì•\¦ó‘Ô‚ğİ’è
-	changeTextAreaColor(document.siteswapForm.siteswap1);	//ƒWƒƒƒOƒŠƒ“ƒO‰Â”\‚Èê‡‚Ì”wŒiF•ÏX
+	loadInputArea(3);				//æ¬¡ã®è¡¨ç¤ºçŠ¶æ…‹ã‚’è¨­å®š
+	changeTextAreaColor(document.siteswapForm.siteswap1);	//ã‚¸ãƒ£ã‚°ãƒªãƒ³ã‚°å¯èƒ½ãªå ´åˆã®èƒŒæ™¯è‰²å¤‰æ›´
 	changeTextAreaColor2(document.siteswapForm.trans);
 	changeTextAreaColor(document.siteswapForm.siteswap2);	
 	return(3);
 }
 
-//“ü—ÍƒGƒŠƒA‚Ì’†gA”wŒiF‚ğƒNƒŠƒA
+//å…¥åŠ›ã‚¨ãƒªã‚¢ã®ä¸­èº«ã€èƒŒæ™¯è‰²ã‚’ã‚¯ãƒªã‚¢
 function ClearInputArea(inputAreaNum){
 	document.siteswapForm.siteswap1.value = "";
 	document.siteswapForm.siteswap1.style.background="";
@@ -99,63 +99,63 @@ function ClearInputArea(inputAreaNum){
 	}
 }
 
-//“ü—ÍƒGƒŠƒA‚Ì‘OŒã‚ğŒğŠ·
+//å…¥åŠ›ã‚¨ãƒªã‚¢ã®å‰å¾Œã‚’äº¤æ›
 function SwapInputArea(inputAreaNum){
-	//ˆ—‚Í“ü—Í—“‚ª2‚ÂˆÈã‚ ‚é‚Æ‚«‚É‚Ì‚İs‚¤
+	//å‡¦ç†ã¯å…¥åŠ›æ¬„ãŒ2ã¤ä»¥ä¸Šã‚ã‚‹ã¨ãã«ã®ã¿è¡Œã†
 	if(inputAreaNum >= 2){
 		var tmp = document.siteswapForm.siteswap2.value;
 		document.siteswapForm.siteswap2.value = document.siteswapForm.siteswap1.value;
 		document.siteswapForm.siteswap1.value = tmp;
-		//ƒWƒƒƒOƒŠƒ“ƒO‰Â”\«‚ğ”»’è‚µ‚Ä”wŒiF•ÏX
+		//ã‚¸ãƒ£ã‚°ãƒªãƒ³ã‚°å¯èƒ½æ€§ã‚’åˆ¤å®šã—ã¦èƒŒæ™¯è‰²å¤‰æ›´
 		changeTextAreaColor(document.siteswapForm.siteswap1);
 		changeTextAreaColor(document.siteswapForm.siteswap2);
 	}
-	//“ü—Í—“‚ª3‚Â‚ ‚é‚Æ‚«‚ÍAÚ‘±‰Â”\«‚Ì”»’è‚às‚¤
+	//å…¥åŠ›æ¬„ãŒ3ã¤ã‚ã‚‹ã¨ãã¯ã€æ¥ç¶šå¯èƒ½æ€§ã®åˆ¤å®šã‚‚è¡Œã†
 	if(inputAreaNum >= 3){
 		changeTextAreaColor2(document.siteswapForm.trans);
 	}
 }
 
-//ƒ‰ƒ“ƒ_ƒ€ƒAƒjƒ[ƒVƒ‡ƒ““à‚ÌƒŠƒ“ƒN‚ğİ’è
+//ãƒ©ãƒ³ãƒ€ãƒ ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å†…ã®ãƒªãƒ³ã‚¯ã‚’è¨­å®š
 function setRandomAnimationLink(){
-	//ƒ{[ƒ‹ŒÂ”‚ğƒZƒŒƒNƒgƒ{ƒbƒNƒX‚©‚çæ“¾
+	//ãƒœãƒ¼ãƒ«å€‹æ•°ã‚’ã‚»ãƒ¬ã‚¯ãƒˆãƒœãƒƒã‚¯ã‚¹ã‹ã‚‰å–å¾—
 	var ballNum = document.siteswapForm.ballNum.selectedIndex;	
 
-	//ƒ‰ƒ“ƒ_ƒ€ƒAƒjƒ[ƒVƒ‡ƒ“‚ª‰Â”\‚©‚ğ”»’è
+	//ãƒ©ãƒ³ãƒ€ãƒ ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãŒå¯èƒ½ã‹ã‚’åˆ¤å®š
 	var randomable = false;
 	if(Hmax>=ballNum) randomable = true;
 
-	//ƒŠƒ“ƒNæURLİ’è
+	//ãƒªãƒ³ã‚¯å…ˆURLè¨­å®š
 	var nextUrl = "juggle.html?mode=r"
 				+ "&n=" + ballNum
 				+ "&m=" + Hmax;
-	//ƒŠƒ“ƒNURL•¶š—ñİ’è(•s‰Â”\‚¾‚Á‚½ê‡‚Í'•s‰Â'’Ç‰Á)
-	var nextUrlString = 'ƒ‰ƒ“ƒ_ƒ€ƒAƒjƒ[ƒVƒ‡ƒ“'
-	if(!randomable) nextUrlString += '•s‰Â';
+	//ãƒªãƒ³ã‚¯URLæ–‡å­—åˆ—è¨­å®š(ä¸å¯èƒ½ã ã£ãŸå ´åˆã¯'ä¸å¯'è¿½åŠ )
+	var nextUrlString = 'ãƒ©ãƒ³ãƒ€ãƒ ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³'
+	if(!randomable) nextUrlString += 'ä¸å¯';
 	nextUrlString +=(
 						'['  + ballNum + 'ball,'
 						+ 'max' + Hmax + ']'
 					);
-	//ƒŠƒ“ƒN•¶š—ñİ’è
+	//ãƒªãƒ³ã‚¯æ–‡å­—åˆ—è¨­å®š
 	var linkString = "";
 	linkString += '<font size="2"'
-	if(!randomable) linkString += 'color="gray"';				//•s‰Â‚È‚çF‚ğƒOƒŒ[‚É
+	if(!randomable) linkString += 'color="gray"';				//ä¸å¯ãªã‚‰è‰²ã‚’ã‚°ãƒ¬ãƒ¼ã«
 	linkString += '>';
-	if(randomable) linkString += '<a href=' + nextUrl + '>';	//•s‰Â‚È‚ç<a>‚ğg‚í‚È‚¢
+	if(randomable) linkString += '<a href=' + nextUrl + '>';	//ä¸å¯ãªã‚‰<a>ã‚’ä½¿ã‚ãªã„
 	linkString += nextUrlString + '</font>'
 
-	//ƒŠƒ“ƒN•\¦
+	//ãƒªãƒ³ã‚¯è¡¨ç¤º
 	document.getElementById("randomAnimationLink").innerHTML = linkString;
 }
 
-//ƒ‰ƒ“ƒ_ƒ€SS‚ğ¶¬‰Â”\‚©”»’è‚µA¶¬•s‰Â‚È‚çrandomƒ{ƒ^ƒ“‚ğ‰Ÿ‰º•s‰Â‚É‚·‚é
+//ãƒ©ãƒ³ãƒ€ãƒ SSã‚’ç”Ÿæˆå¯èƒ½ã‹åˆ¤å®šã—ã€ç”Ÿæˆä¸å¯ãªã‚‰randomãƒœã‚¿ãƒ³ã‚’æŠ¼ä¸‹ä¸å¯ã«ã™ã‚‹
 function setRandomSSButtonState(){
-	//ƒ{[ƒ‹ŒÂ”‚ğƒZƒŒƒNƒgƒ{ƒbƒNƒX‚©‚çæ“¾
+	//ãƒœãƒ¼ãƒ«å€‹æ•°ã‚’ã‚»ãƒ¬ã‚¯ãƒˆãƒœãƒƒã‚¯ã‚¹ã‹ã‚‰å–å¾—
 	var ballNum = document.siteswapForm.ballNum.selectedIndex;
-	//ƒ‰ƒ“ƒ_ƒ€SS‚ª¶¬‰Â”\‚©‚ğ”»’è
+	//ãƒ©ãƒ³ãƒ€ãƒ SSãŒç”Ÿæˆå¯èƒ½ã‹ã‚’åˆ¤å®š
 	var randomable = false;
 	if(Hmin<=ballNum && ballNum<=Hmax) randomable = true;
 	
-	//ƒ‰ƒ“ƒ_ƒ€SS¶¬‰Â”\‚¾‚Á‚½ê‡Aƒ{ƒ^ƒ“‚ªg‚¦‚é‚æ‚¤‚É‚·‚é
+	//ãƒ©ãƒ³ãƒ€ãƒ SSç”Ÿæˆå¯èƒ½ã ã£ãŸå ´åˆã€ãƒœã‚¿ãƒ³ãŒä½¿ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
 	document.siteswapForm.randomButton.disabled = !randomable;	
 }
