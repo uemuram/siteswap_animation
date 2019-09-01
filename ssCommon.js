@@ -129,7 +129,7 @@ function a_juggle3(charSS1,charTrans,charSS2){
 
 //アニメーションページへのリンク(アニメーションの種類に応じて表示)
 function a_juggleX(){
-	var nextUrl ="http://murashi1124.hp.infoseek.co.jp/juggle.html";
+	var nextUrl ="https://uemuram.github.io/siteswap_animation/juggle.html";
 	switch(SSdata["p"]){
 		case 1:		//通常入力時
 			nextUrl +=("?siteswap1=" + SSdata["siteswap1"]);
@@ -156,7 +156,7 @@ function a_juggleX(){
 
 //埋め込みページへのリンク
 function a_embedX(){
-	var nextURL ="http://murashi1124.hp.infoseek.co.jp/embed.html";
+	var nextURL ="https://uemuram.github.io/siteswap_animation/embed.html";
 	switch(SSdata["p"]){
 		case 1:		//通常入力時
 			nextURL +=("?siteswap1=" + SSdata["siteswap1"]);
